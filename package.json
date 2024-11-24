@@ -1,0 +1,12 @@
+{
+    "name": "test",
+    "scripts": {
+        "example1": "tstl && cd out && lua example1.lua",
+        "example2": "tstl && cd out && lua example2.lua"
+    },
+    "devDependencies": {
+        "lua-types": "^2.13.1",
+        "typescript": "^5.6.2",
+        "typescript-to-lua": "^1.27.1"
+    }
+}

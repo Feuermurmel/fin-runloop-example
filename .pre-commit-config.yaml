@@ -1,0 +1,39 @@
+minimum_pre_commit_version: 3.2.0
+default_install_hook_types: [pre-commit]
+
+repos:
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: v3.3.3
+    hooks:
+      - id: prettier
+        additional_dependencies:
+          - prettier@v3.3.3
+          - "@trivago/prettier-plugin-sort-imports"
+        stages: [pre-commit, manual]
+        types_or: [javascript, ts, tsx, scss, json]
+        # Same width that black uses by default.
+        args: [--print-width=88, --tab-width=4]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        stages: [pre-commit, manual]
+      - id: end-of-file-fixer
+        stages: [pre-commit, manual]
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.18
+    hooks:
+      - id: mdformat
+        stages: [pre-commit, manual]
+        # Same width that black uses by default.
+        args: [--wrap=88, --number]
+  - repo: local
+    hooks:
+      - id: tsc
+        name: Run tsc --noEmit
+        # Do not run with --hook-stage=manual.
+        stages: [pre-commit]
+        files: \.(js|jsx|ts|tsx)$
+        language: system
+        entry: node_modules/.bin/tsc --noEmit
+        pass_filenames: false
