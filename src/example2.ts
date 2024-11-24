@@ -2,10 +2,10 @@ import * as futures from "./futures";
 import * as runtime from "./runtime";
 import * as tasks from "./tasks";
 
+// Main script. Think of this function as the content of the
+// main (EEPROM) script. It would be run by the runtime and
+// can call blocking functions (e.g. Future.await()).
 tasks.task(() => {
-    // Main script. Think of this function as the content of the
-    // main (EEPROM) script. It would be run by the runtime and
-    // can call blocking functions (e.g. Future.await()).
     let httpFutures = [];
 
     for (let i = 0; i < 5; i += 1) {

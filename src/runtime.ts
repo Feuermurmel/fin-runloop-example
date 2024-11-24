@@ -88,7 +88,7 @@ export function run(): void {
                 return;
             }
 
-            print(`Sleeping for ${wait} s.`);
+            print(`(sleeping for ${wait} s)`);
             let result = os.execute(`sleep ${wait}`);
 
             if (!result[0]) {

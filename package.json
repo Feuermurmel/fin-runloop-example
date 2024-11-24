@@ -2,7 +2,8 @@
     "name": "test",
     "scripts": {
         "example1": "tstl && cd out && lua example1.lua",
-        "example2": "tstl && cd out && lua example2.lua"
+        "example2": "tstl && cd out && lua example2.lua",
+        "example3": "tstl && cd out && lua example3.lua"
     },
     "devDependencies": {
         "lua-types": "^2.13.1",
