@@ -87,6 +87,6 @@ export function httpRequest(url: string): Future<string> {
 }
 
 // Sleep for the specified time.
-export function sleep(delay: number) {
+export function sleep(delay: number): Future<void> {
     return createFuture<void>((onComplete) => runtime.timer(delay, onComplete));
 }

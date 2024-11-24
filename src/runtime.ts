@@ -102,7 +102,7 @@ export function run(): void {
 }
 
 // Insert a function into the runloop's queue.
-function post(time: number, fn: () => void) {
+function post(time: number, fn: () => void): void {
     // Find the index where this task needs to be inserted so that the
     // queue is kept sorted by time.
     let index = queue.findIndex((x) => x.time > time);
